@@ -1,0 +1,21 @@
+#headerimg{
+    background-image: url("kintaikyo.jpg");
+    background-repeat: no-repeat;
+    background-size:auto;
+    width:100%; height:100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+header{
+    height:560px;
+    clear:both;
+}
+h1{
+    color:green;
+}
+
+#footer{
+    height:100px;
+    text-align:center;
+    clear:both;
+}

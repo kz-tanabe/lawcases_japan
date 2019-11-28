@@ -1,0 +1,8 @@
+#bg{
+    top: 0;
+    left: 0;
+    background: url("cherry.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: repeat-y;
+}

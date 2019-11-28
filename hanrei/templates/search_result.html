@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}検索結果{% endblock %}</title>
+
+{% block content %}
+      <div class="alert alert-primary" role="alert">
+          <h2>検索結果</h2>
+      </div>
+          {% if results %}
+        {% for hanreipost in results %}
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">{{ hanreipost.court_name }} {{ hanreipost.case_number }}</h4>
+            <p class="card-text">
+               {{ hanreipost.text }}
+            </p>
+            <a href="detail/{{ hanreipost.id }}/" target="_blank" class="card-link">個別ページへ</a>
+            <a href="{{ hanreipost.judgement.url }}" target="_blank" class="card-link">判決全文</a>
+        </div>
+    </div>
+        {% endfor %}
+        {% else %}
+            <p>該当の判例は存在しません</p>
+    {% endif %}
+{% endblock %}

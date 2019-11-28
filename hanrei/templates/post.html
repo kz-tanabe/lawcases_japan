@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}判例投稿{% endblock %}</title>
+
+{% block content %}
+<div class="alert alert-primary" role="alert">
+    <h2>判例投稿</h2>
+</div>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <div class="maincontents2__table">
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="送信">
+        <input type="reset" value="リセット">
+    </div>
+</form>
+{% endblock %}

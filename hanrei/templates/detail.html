@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}{{ context.court_name }} {{ context.case_number }}{% endblock %}</title>
+
+{% block content %}
+
+      <div class="alert alert-primary" role="alert"><h2 class="mt-0">{{ context.court_name }} {{ context.case_number }}</h2></div>
+      <h5>{{ context.text }}</h5>
+      <div class="maincontents2__table">
+                <table class="table table-bordered">
+                <tr>
+                    <td>事件番号</td>
+                    <td>{{ context.case_number }}</td>
+                </tr>
+                <tr>
+                    <td>事件名</td>
+                    <td>{{ context.case_name }}</td>
+                </tr>
+                <tr>
+                    <td>裁判年月日</td>
+                    <td>{{ context.date }}</td>
+                </tr>
+                <tr>
+                    <td>裁判所名</td>
+                    <td>{{ context.court_name }}</td>
+                </tr>
+                <tr>
+                    <td>裁判種別</td>
+                    <td>{{ context.type }}</td>
+                </tr>
+                <tr>
+                    <td>原告代理人</td>
+                    <td>{{ context.x_attorney_name }}</td>
+                </tr>
+                <tr>
+                    <td>被告代理人</td>
+                    <td>{{ context.y_attorney_name }}</td>
+                </tr>
+                <tr>
+                    <td>裁判官</td>
+                    <td>{{ context.judge_name }}</td>
+                </tr>
+            </table>
+            <a href="{{ context.judgement.url }}" target="_blank">判決全文</a>
+      </div>
+{% endblock %}
