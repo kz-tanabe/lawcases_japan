@@ -21,7 +21,7 @@ def index(request):
     return render(request, 'index.html', context)
 
 
-@login_required(login_url='/login/')
+@login_required(login_url='/logout/')
 def post_new(request):
     if request.method == "POST":
         form = HanreiPostForm(request.POST, request.FILES)
@@ -38,7 +38,7 @@ def detail(request, id):
     return render(request, 'detail.html', {"context": context})
 
 
-@login_required(login_url='/login/')
+@login_required(login_url='/logout/')
 def search(request):
     query = request.GET.get('q')
     if query:
@@ -51,6 +51,7 @@ def search(request):
     return render(request, 'search.html')
 
 
+@login_required(login_url='/logout/')
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
