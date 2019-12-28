@@ -1,15 +1,20 @@
 {% extends 'base.html' %}
 
-<title>{% block title %}ログイン{% endblock %}</title>
+<title>{% block title %}お断り{% endblock %}</title>
 
 {% block content %}
     <div class="alert alert-primary" role="alert">
-        <h2>ログイン</h2>
+        <h2>お断り</h2>
     </div>
+    <div class="maincontents2__table">
+        <h4>この機能はお使いになれません</h4>
+    </div>
+    <!--
     <form method="post">{% csrf_token %}
         <div class="maincontents2__table">
             {{ form.as_p }}
         <input type="submit" value="ログイン">
         </div>
     </form>
+    -->
 {% endblock %}
