@@ -15,7 +15,6 @@ from django.db.models import Q
 from django.shortcuts import redirect
 
 
-@login_required(login_url='/login/')
 def index(request):
     latest_post_list = HanreiPost.objects.order_by('-date')[:10]
     context = {'latest_post_list': latest_post_list}
@@ -34,7 +33,6 @@ def post_new(request):
     return render(request, 'post.html', {"form": form})
 
 
-@login_required(login_url='/login/')
 def detail(request, id):
     context = get_object_or_404(HanreiPost, pk=id)
     return render(request, 'detail.html', {"context": context})
