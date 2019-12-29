@@ -8,7 +8,7 @@ from django.contrib.auth.views import (
     LoginView, LogoutView
 )
 
-# Create your views here.
+# Copyright 2019 Kazutaka Tanabe All Rights Reserved.
 
 from .models import HanreiPost, Shrine
 from django.db.models import Q
@@ -16,7 +16,7 @@ from django.shortcuts import redirect
 
 
 def index(request):
-    latest_post_list = HanreiPost.objects.order_by('-date')[:10]
+    latest_post_list = HanreiPost.objects.order_by('-date')[:50]
     context = {'latest_post_list': latest_post_list}
     return render(request, 'index.html', context)
 
